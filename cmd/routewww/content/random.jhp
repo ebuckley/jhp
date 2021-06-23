@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Most Popular Names 2015</h1>
+<pre>
+<?jhp
+var offset = 0
+if (params.offset) {
+    offset = parseInt(params.offset);
+}
+
+var paramsdump = JSON.stringify(params);
+echo(paramsdump);
+?>
+</pre>
+<?jhp
+    var objs = sql("select * from gendered_names limit 10 offset " + offset);
+    objs.forEach( function(object) {
+?>
+<section>
+    <h2>
+        <?jhp
+         echo(object.name)
+        ?>
+    </h2>
+</section>
+<?jhp
+})
+?>
+<a href="?offset=<?jhp echo(offset + 10); ?>">More!</a>
+<details>
+    <summary>The Raw Data</summary>
+    <pre>
+      <?jhp
+    echo(JSON.stringify(objs, null, '  '));
+      ?>
+    </pre>
+</details>
+</body>
+</html>

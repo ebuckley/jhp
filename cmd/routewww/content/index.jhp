@@ -1,0 +1,17 @@
+<?jhp
+ const now = Date.now();
+?>
+<html>
+
+<body>
+<h1> Hello my people.. </h1>
+<p>It is: <em>
+<?jhp
+    echo(now);
+?>
+</em> in unix time.</p>
+
+<a href="random.jhp">Check out another example..</a>
+
+</body>
+</html>
