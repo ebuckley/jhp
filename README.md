@@ -11,5 +11,5 @@ Embedding javacsript in a go application is a reasonable way to implement plugin
 - cmd/trivial is your starting point for evaluating a javascript expression inside a go program
 - cmd/simple is a read eval print loop which may be useful as a starting point for creating interactive command line applications that support javascript.
 - cmd/simplewww show's how we might integrate a javascript plugin layer inside a web response.
-- cmd/routewww is an example of adding a routing layer, and using this to load special `.jhp` files. Like the good old days of running php on a shared host!
+- cmd/routewww is an example of adding a routing layer, and using this to load special `.jhp` files. 
 
